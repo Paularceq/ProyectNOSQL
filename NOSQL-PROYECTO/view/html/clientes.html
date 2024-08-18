@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="../css/clientes.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Clientes</h1>
+            </header>
+
+            <section class="content">
+                <!-- Add Client Button -->
+                <div class="add-client">
+                    <button onclick="openForm()">Agregar Cliente</button>
+                </div>
+
+                <!-- Add Client Form (Initially hidden) -->
+                <div id="addClientForm" class="client-form">
+                    <h2>Agregar Nuevo Cliente</h2>
+                    <form>
+                        <label for="clientName">Nombre del Cliente:</label>
+                        <input type="text" id="clientName" name="clientName" required>
+
+                        <label for="clientEmail">Correo Electrónico:</label>
+                        <input type="email" id="clientEmail" name="clientEmail" required>
+
+                        <label for="clientPhone">Teléfono:</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" required>
+
+                        <label for="clientAddress">Dirección:</label>
+                        <input type="text" id="clientAddress" name="clientAddress" required>
+
+                        <button type="submit">Guardar Cliente</button>
+                        <button type="button" onclick="closeForm()">Cancelar</button>
+                    </form>
+                </div>
+
+                <!-- Client List Table -->
+                <div class="client-list">
+                    <h2>Lista de Clientes Registrados</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Cliente</th>
+                                <th>Correo Electrónico</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Fecha de Registro</th>
+                                <th>Acciones</th> <!-- New Column for Actions -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Cliente A</td>
+                                <td>clienteA@example.com</td>
+                                <td>8888-8888</td>
+                                <td>Calle 123, Ciudad</td>
+                                <td>2024-08-17</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Cliente B</td>
+                                <td>clienteB@example.com</td>
+                                <td>7777-7777</td>
+                                <td>Avenida 456, Ciudad</td>
+                                <td>2024-08-17</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form display -->
+    <script>
+        function openForm() {
+            document.getElementById('addClientForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('addClientForm').style.display = 'none';
+        }
+
+        // JavaScript functions for Edit and Delete (you can add more logic here)
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Edit client functionality is not yet implemented.');
+            });
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Delete client functionality is not yet implemented.');
+            });
+        });
+    </script>
+</body>
+</html>

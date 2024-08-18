@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Productos</h1>
+            </header>
+
+            <section class="content">
+                <!-- Add Product Button -->
+                <div class="add-product">
+                    <button onclick="openForm()">Agregar Producto</button>
+                </div>
+
+                <!-- Add Product Form (Initially hidden) -->
+                <div id="addProductForm" class="product-form">
+                    <h2>Agregar Nuevo Producto</h2>
+                    <form>
+                        <label for="productName">Nombre del Producto:</label>
+                        <input type="text" id="productName" name="productName" required>
+
+                        <label for="productCategory">Categoría:</label>
+                        <input type="text" id="productCategory" name="productCategory" required>
+
+                        <label for="productPrice">Precio (₡):</label> <!-- Updated -->
+                        <input type="number" id="productPrice" name="productPrice" required>
+
+                        <label for="productQuantity">Cantidad:</label>
+                        <input type="number" id="productQuantity" name="productQuantity" required>
+
+                        <button type="submit">Guardar Producto</button>
+                        <button type="button" onclick="closeForm()">Cancelar</button>
+                    </form>
+                </div>
+
+                <!-- Product List Table -->
+                <div class="product-list">
+                    <h2>Lista de Productos Registrados</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Producto</th>
+                                <th>Categoría</th>
+                                <th>Precio (₡)</th> <!-- Updated -->
+                                <th>Cantidad</th>
+                                <th>Fecha de Registro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Producto A</td>
+                                <td>Categoría 1</td>
+                                <td>₡15000</td> <!-- Updated -->
+                                <td>100</td>
+                                <td>2024-08-17</td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Producto B</td>
+                                <td>Categoría 2</td>
+                                <td>₡7500</td> <!-- Updated -->
+                                <td>50</td>
+                                <td>2024-08-17</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form display -->
+    <script>
+        function openForm() {
+            document.getElementById('addProductForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('addProductForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

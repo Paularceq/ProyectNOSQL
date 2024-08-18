@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <link rel="stylesheet" href="../css/empleado.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Empleados</h1>
+            </header>
+
+            <section class="content">
+                <!-- Add Employee Button -->
+                <div class="add-employee">
+                    <button onclick="openForm()">Agregar Empleado</button>
+                </div>
+
+                <!-- Add Employee Form (Initially hidden) -->
+                <div id="addEmployeeForm" class="employee-form">
+                    <h2>Agregar Nuevo Empleado</h2>
+                    <form>
+                        <label for="employeeName">Nombre del Empleado:</label>
+                        <input type="text" id="employeeName" name="employeeName" required>
+
+                        <label for="employeeEmail">Correo Electrónico:</label>
+                        <input type="email" id="employeeEmail" name="employeeEmail" required>
+
+                        <label for="employeePhone">Teléfono:</label>
+                        <input type="tel" id="employeePhone" name="employeePhone" required>
+
+                        <label for="employeePosition">Posición:</label>
+                        <input type="text" id="employeePosition" name="employeePosition" required>
+
+                        <label for="employeeSalary">Salario (₡):</label>
+                        <input type="number" id="employeeSalary" name="employeeSalary" required>
+
+                        <label for="employeeHireDate">Fecha de Contratación:</label>
+                        <input type="date" id="employeeHireDate" name="employeeHireDate" required>
+
+                        <button type="submit">Guardar Empleado</button>
+                        <button type="button" onclick="closeForm()">Cancelar</button>
+                    </form>
+                </div>
+
+                <!-- Employee List Table -->
+                <div class="employee-list">
+                    <h2>Lista de Empleados</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Empleado</th>
+                                <th>Correo Electrónico</th>
+                                <th>Teléfono</th>
+                                <th>Posición</th>
+                                <th>Salario (₡)</th>
+                                <th>Fecha de Contratación</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Empleado A</td>
+                                <td>empleadoA@example.com</td>
+                                <td>8888-8888</td>
+                                <td>Gerente</td>
+                                <td>₡500,000</td>
+                                <td>2024-08-17</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Empleado B</td>
+                                <td>empleadoB@example.com</td>
+                                <td>7777-7777</td>
+                                <td>Supervisor</td>
+                                <td>₡350,000</td>
+                                <td>2024-08-18</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form display -->
+    <script>
+        function openForm() {
+            document.getElementById('addEmployeeForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('addEmployeeForm').style.display = 'none';
+        }
+
+        // JavaScript functions for Edit and Delete (you can add more logic here)
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Edit employee functionality is not yet implemented.');
+            });
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Delete employee functionality is not yet implemented.');
+            });
+        });
+    </script>
+</body>
+</html>

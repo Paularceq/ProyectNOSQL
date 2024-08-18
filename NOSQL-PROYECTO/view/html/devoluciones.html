@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Devoluciones</title>
+    <link rel="stylesheet" href="../css/devoluciones.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Resumen de Devoluciones</h1>
+            </header>
+
+            <section class="content">
+                <!-- Button to redirect to formDevolucion -->
+                <div class="redirect-button">
+                    <button onclick="window.location.href='formDevolucion.html'">Realizar Nueva Devolución</button>
+                </div>
+
+                <!-- Returned Products List -->
+                <div class="returned-products-list">
+                    <h2>Lista de Productos Devueltos</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID del Producto</th>
+                                <th>Nombre del Producto</th>
+                                <th>Cantidad Devuelta</th>
+                                <th>Razón de la Devolución</th>
+                                <th>Fecha de Devolución</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Producto A</td>
+                                <td>10</td>
+                                <td>Producto dañado</td>
+                                <td>2024-08-17</td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Producto B</td>
+                                <td>5</td>
+                                <td>Orden incorrecta</td>
+                                <td>2024-08-18</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

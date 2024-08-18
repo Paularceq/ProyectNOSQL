@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoluciones</title>
+    <link rel="stylesheet" href="../css/formDevolucion.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Devolución de Productos</h1>
+            </header>
+
+            <section class="content">
+                <!-- Return Product Form -->
+                <div class="return-product-form">
+                    <h2>Realizar Devolución</h2>
+                    <form>
+                        <label for="productId">ID del Producto:</label>
+                        <input type="text" id="productId" name="productId" required>
+
+                        <label for="productName">Nombre del Producto:</label>
+                        <input type="text" id="productName" name="productName" required>
+
+                        <label for="returnQuantity">Cantidad a Devolver:</label>
+                        <input type="number" id="returnQuantity" name="returnQuantity" required>
+
+                        <label for="returnReason">Razón de la Devolución:</label>
+                        <textarea id="returnReason" name="returnReason" rows="4" required></textarea>
+
+                        <label for="returnDate">Fecha de Devolución:</label>
+                        <input type="date" id="returnDate" name="returnDate" required>
+
+                        <button type="submit">Procesar Devolución</button>
+                        <button type="reset">Cancelar</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

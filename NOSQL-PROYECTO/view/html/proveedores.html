@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+    <link rel="stylesheet" href="../css/proveedores.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Proveedores</h1>
+            </header>
+
+            <section class="content">
+                <!-- Add Supplier Button -->
+                <div class="add-supplier">
+                    <button onclick="openForm()">Agregar Proveedor</button>
+                </div>
+
+                <!-- Add Supplier Form (Initially hidden) -->
+                <div id="addSupplierForm" class="supplier-form">
+                    <h2>Agregar Nuevo Proveedor</h2>
+                    <form>
+                        <label for="supplierName">Nombre del Proveedor:</label>
+                        <input type="text" id="supplierName" name="supplierName" required>
+
+                        <label for="supplierEmail">Correo Electrónico:</label>
+                        <input type="email" id="supplierEmail" name="supplierEmail" required>
+
+                        <label for="supplierPhone">Teléfono:</label>
+                        <input type="tel" id="supplierPhone" name="supplierPhone" required>
+
+                        <label for="supplierAddress">Dirección:</label>
+                        <input type="text" id="supplierAddress" name="supplierAddress" required>
+
+                        <button type="submit">Guardar Proveedor</button>
+                        <button type="button" onclick="closeForm()">Cancelar</button>
+                    </form>
+                </div>
+
+                <!-- Supplier List Table -->
+                <div class="supplier-list">
+                    <h2>Lista de Proveedores Registrados</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Proveedor</th>
+                                <th>Correo Electrónico</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Fecha de Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Proveedor A</td>
+                                <td>proveedorA@example.com</td>
+                                <td>8888-8888</td>
+                                <td>Calle 123, Ciudad</td>
+                                <td>2024-08-17</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Proveedor B</td>
+                                <td>proveedorB@example.com</td>
+                                <td>7777-7777</td>
+                                <td>Avenida 456, Ciudad</td>
+                                <td>2024-08-18</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form display -->
+    <script>
+        function openForm() {
+            document.getElementById('addSupplierForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('addSupplierForm').style.display = 'none';
+        }
+
+        // JavaScript functions for Edit and Delete (you can add more logic here)
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Edit supplier functionality is not yet implemented.');
+            });
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Delete supplier functionality is not yet implemented.');
+            });
+        });
+    </script>
+</body>
+</html>

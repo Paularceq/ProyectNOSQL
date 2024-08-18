@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas por Pagar</title>
+    <link rel="stylesheet" href="../css/pagos.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Cuentas por Pagar</h1>
+            </header>
+
+            <section class="content">
+                <!-- Add Payment Button -->
+                <div class="add-payment">
+                    <button onclick="openForm()">Agregar Pago</button>
+                </div>
+
+                <!-- Add Payment Form (Initially hidden) -->
+                <div id="addPaymentForm" class="payment-form">
+                    <h2>Agregar Nuevo Pago</h2>
+                    <form>
+                        <label for="paymentDescription">Descripción del Pago:</label>
+                        <input type="text" id="paymentDescription" name="paymentDescription" required>
+
+                        <label for="paymentAmount">Monto (₡):</label>
+                        <input type="number" id="paymentAmount" name="paymentAmount" required>
+
+                        <label for="paymentDate">Fecha de Pago:</label>
+                        <input type="date" id="paymentDate" name="paymentDate" required>
+
+                        <label for="paymentSupplier">Proveedor:</label>
+                        <input type="text" id="paymentSupplier" name="paymentSupplier" required>
+
+                        <button type="submit">Guardar Pago</button>
+                        <button type="button" onclick="closeForm()">Cancelar</button>
+                    </form>
+                </div>
+
+                <!-- Payments List Table -->
+                <div class="payments-list">
+                    <h2>Lista de Pagos</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Descripción del Pago</th>
+                                <th>Monto (₡)</th>
+                                <th>Fecha de Pago</th>
+                                <th>Proveedor</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Pago Factura A</td>
+                                <td>₡150,000</td>
+                                <td>2024-08-17</td>
+                                <td>Proveedor A</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Pago Factura B</td>
+                                <td>₡75,000</td>
+                                <td>2024-08-18</td>
+                                <td>Proveedor B</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form display -->
+    <script>
+        function openForm() {
+            document.getElementById('addPaymentForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('addPaymentForm').style.display = 'none';
+        }
+
+        // JavaScript functions for Edit and Delete (you can add more logic here)
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Edit payment functionality is not yet implemented.');
+            });
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Delete payment functionality is not yet implemented.');
+            });
+        });
+    </script>
+</body>
+</html>

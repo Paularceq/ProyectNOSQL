@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="../css/inventario.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../imagen/profile.jpg" alt="Profile Picture">
+                <h3>Administrador</h3>
+                <p>Administrator</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="devoluciones.html">Devoluciones</a></li>
+                    <li><a href="proveedores.html">Proveedores</a></li>
+                    <li><a href="inventario.html">Inventario</a></li>
+                    <li><a href="pagos.html">Pagos</a></li>
+                    <li><a href="empleado.html">Empleados</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Inventario</h1>
+            </header>
+
+            <section class="content">
+                <!-- Add Inventory Item Button -->
+                <div class="add-inventory">
+                    <button onclick="openForm()">Agregar Producto al Inventario</button>
+                </div>
+
+                <!-- Add Inventory Form (Initially hidden) -->
+                <div id="addInventoryForm" class="inventory-form">
+                    <h2>Agregar Nuevo Producto al Inventario</h2>
+                    <form>
+                        <label for="inventoryName">Nombre del Producto:</label>
+                        <input type="text" id="inventoryName" name="inventoryName" required>
+
+                        <label for="inventoryQuantity">Cantidad:</label>
+                        <input type="number" id="inventoryQuantity" name="inventoryQuantity" required>
+
+                        <label for="inventoryLocation">Ubicación:</label>
+                        <input type="text" id="inventoryLocation" name="inventoryLocation" required>
+
+                        <label for="inventorySupplier">Proveedor:</label>
+                        <input type="text" id="inventorySupplier" name="inventorySupplier" required>
+
+                        <label for="inventoryDate">Fecha de Entrada:</label>
+                        <input type="date" id="inventoryDate" name="inventoryDate" required>
+
+                        <button type="submit">Guardar Producto</button>
+                        <button type="button" onclick="closeForm()">Cancelar</button>
+                    </form>
+                </div>
+
+                <!-- Inventory List Table -->
+                <div class="inventory-list">
+                    <h2>Lista de Inventario</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Producto</th>
+                                <th>Cantidad</th>
+                                <th>Ubicación</th>
+                                <th>Proveedor</th>
+                                <th>Fecha de Entrada</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Producto A</td>
+                                <td>100</td>
+                                <td>Almacén 1</td>
+                                <td>Proveedor A</td>
+                                <td>2024-08-17</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Producto B</td>
+                                <td>50</td>
+                                <td>Almacén 2</td>
+                                <td>Proveedor B</td>
+                                <td>2024-08-18</td>
+                                <td>
+                                    <button class="edit-btn">Editar</button>
+                                    <button class="delete-btn">Eliminar</button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form display -->
+    <script>
+        function openForm() {
+            document.getElementById('addInventoryForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('addInventoryForm').style.display = 'none';
+        }
+
+        // JavaScript functions for Edit and Delete (you can add more logic here)
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Edit inventory item functionality is not yet implemented.');
+            });
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Delete inventory item functionality is not yet implemented.');
+            });
+        });
+    </script>
+</body>
+</html>
