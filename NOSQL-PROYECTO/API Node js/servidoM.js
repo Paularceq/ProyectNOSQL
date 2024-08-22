@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParse = require('body-parser');
-
+const router=express.Router();
 const ClientesRoutes = require('./routers/ClientesRoutes');
+const CategoriasRoutes = require('./routers/CategoriasRoutes'); 
 const urlConexion = 'mongodb://localhost:27017/GameZone';
 const url = 'http://localhost';
 
@@ -28,17 +29,13 @@ mongoose.connect(urlConexion,
 
 );
 
+router.get('/',(req,res)=>{
+    res.send('test')
+});
+
 //Declaracion de rutas
-app.use('/api', CategoriasRoutes);
+app.use('/api/categorias', CategoriasRoutes);
 app.use('/api', ClientesRoutes);
-app.use('/api', DevolucionRoutes);
-app.use('/api', EmpleadosRoutes);
-app.use('/api', InventarioRoutes);
-app.use('/api', OrdenRoutes);
-app.use('/api', PagosRoutes);
-app.use('/api', ProductosRoutes);
-app.use('/api', PromocionesDescuentosRoutes);
-app.use('/api', ProveedoresRoutes);
 
 app.listen(port, () => {    
         console.log(`Puerto de servicio ${url}:${port}/api`, port);

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dbURL = 'mongodb://localhost:27017/GamerZone';
+const dbURL = 'mongodb://localhost:27017/Gamer';
 
 const connectDB = async () => {
     try {
